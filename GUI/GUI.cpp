@@ -99,6 +99,16 @@ operationType GUI::GetUseroperation() const
 		default: return EMPTY;	//A click on empty place in desgin toolbar
 		}
 	}
+	if (x >= 1000 && x <= 1050 && y >= 0 && y <= 25) {
+		cpalette::chooseDrawColor();
+		return STATUS;
+
+	}
+
+	if (x >= 1000 && x <= 1050 && y >= 26 && y <= 50) {
+		cpalette::chooseFillColor();
+		return STATUS;
+	}
 
 	//[2] User clicks on the drawing area
 	if (y >= ToolBarHeight && y < height - StatusBarHeight)
@@ -449,6 +459,60 @@ void GUI::DrawIrregularPolygon(Point* Points, int VerticesCount, GfxInfo Irregul
 	delete[] xPoints;
 	delete[] yPoints;
 }
+
+void GUI::DrawColorPalette()
+{
+	// bucket shape
+
+	// pen shape 
+	pWind->SetPen(BLACK, 5);
+	pWind->DrawLine(1010, 3, 1040, 20);
+	// Column 1: WHITE (top), BLACK (bottom)
+	pWind->SetBrush(WHITE);  pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1050, 0, 1100, 25);
+
+	pWind->SetBrush(BLACK);  pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1050, 25, 1100, 50);
+
+	// Column 2: RED (top), BLUE (bottom)
+	pWind->SetBrush(RED);    pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1100, 0, 1150, 25);
+
+	pWind->SetBrush(BLUE);   pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1100, 25, 1150, 50);
+
+	// Column 3: YELLOW (top), GREEN (bottom)
+	pWind->SetBrush(YELLOW); pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1150, 0, 1200, 25);
+
+	pWind->SetBrush(GREEN);  pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1150, 25, 1200, 50);
+
+	// Column 4: CYAN (top), ORANGE (bottom)
+	pWind->SetBrush(CYAN);   pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1200, 0, 1250, 25);
+
+	pWind->SetBrush(ORANGE); pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1200, 25, 1250, 50);
+
+	// Column 5: VIOLET (top), PINK (bottom)
+	pWind->SetBrush(VIOLET); pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1250, 0, 1300, 25);
+
+	pWind->SetBrush(PINK);   pWind->SetPen(BLACK, 1);
+	pWind->DrawRectangle(1250, 25, 1300, 50);
+}
+
+void GUI::SetDrawColor(color c)
+{
+	DrawColor = c;
+}
+
+void GUI::SetFillColor(color c)
+{
+	FillColor = c;
+}
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////

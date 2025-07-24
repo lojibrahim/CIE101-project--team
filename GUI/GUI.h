@@ -4,7 +4,7 @@
 
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
-
+#include "../cpalette.h"
 #include <string>
 using namespace std;
 
@@ -104,6 +104,11 @@ public:
 	void DrawIrregularPolygon(Point* Points, int VerticesCount, GfxInfo IrregularPolygonGfxInfo) const;
 
 
+	// color palette
+	window* getWindow() const { return pWind; }
+	void DrawColorPalette();
+	void SetDrawColor(color c);
+	void SetFillColor(color c);
 
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar
@@ -115,4 +120,3 @@ public:
 
 	~GUI();
 };
-

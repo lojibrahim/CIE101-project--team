@@ -105,6 +105,7 @@ controller::~controller()
 //==================================================================================//
 void controller::Run()
 {
+	
 	operationType OpType;
 	do
 	{
@@ -113,6 +114,7 @@ void controller::Run()
 
 		//2. Create an operation coresspondingly
 		operation* pOpr = createOperation(OpType);
+		
 
 		//3. Execute the created operation
 		if (pOpr)
@@ -124,6 +126,7 @@ void controller::Run()
 
 		//Update the interface
 		UpdateInterface();
+        pGUI->DrawColorPalette();
 
 	} while (OpType != EXIT);
 
