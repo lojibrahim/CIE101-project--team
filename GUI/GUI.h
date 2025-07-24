@@ -1,6 +1,6 @@
-#pragma once
+﻿#pragma once
 
-
+//loji
 
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
@@ -33,7 +33,7 @@ class GUI
 		//If you want to change the menu icons order, change the order here
 		ICON_RECT,		//Recangle icon in menu
 		ICON_TRI,		//Triangle icon in menu
-		ICON_LINE,//????
+		ICON_LINE,//────
 		ICON_CIRC,
 		ICON_SQUARE,
 		ICON_OVAL,
